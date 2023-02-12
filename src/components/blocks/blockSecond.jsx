@@ -10,7 +10,7 @@ const columns = [
         title: '',
         dataIndex: 'name',
         key: 'name',
-        width: window.screen.width > 400 ? '700px' : '200px',
+        width: window.screen.width > 500 ? '700px' : '200px',
         // render: (text) => {text}
     },
     {
