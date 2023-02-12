@@ -1,36 +1,54 @@
 import { Button, Table } from 'antd';
+
 const columns = [
     {
-        title: 'Ташкил топган йили*',
-        dataIndex: 'tashkilTopganYili',
-        key: 'tashkilTopganYili',
+        title: '№',
+        width: '40px',
+        render: (record) => +record.key
     },
     {
-        title: 'Майдони',
-        dataIndex: 'maydoni',
-        key: 'maydoni',
+        title: '',
+        dataIndex: 'name',
+        key: 'name',
+        width: window.screen.width > 400 ? '400px' : '200px',
+        // render: (text) => {text}
     },
     {
-        title: 'Электрон харитаси',
-        dataIndex: 'eXaritasi',
-        key: 'eXaritasi',
-        render: (text) => <Button type='link' size='medium' >{text}</Button>,
+        title: '',
+        dataIndex: 'value',
+        key: 'value',
+        // width: '200px',
+        render: (text, record) => record.name === 'Электрон харитаси' ? <Button type='link' size='medium' >{text}</Button> : `${text}`,
+
     },
 
 ];
+
 const data = [
     {
         key: '1',
-        tashkilTopganYili: '1998 йил',
-        maydoni: '383,19 га.',
-        eXaritasi: 'Электрон харитаси	Lat: 41.026 - Long: 69.405',
+        name: 'Ташкил топган йили*',
+        value: '1998 йил',
     },
+    {
+        key: '2',
+        name: 'Майдони',
+        value: '383,19 га.'
+    },
+    {
+        key: '3',
+        name: 'Электрон харитаси',
+        value: 'Электрон харитаси	Lat: 41.026 - Long: 69.405'
+    }
 ];
 const BlockOne = () => {
     return (
         <Table
+            style={{ minHeight: 800 }}
+            bordered
             size='middle'
             title={() => "МФЙ ҳақида қўшимча маълумотлар"}
+            scroll={{ x: 1000, y: 800 }}
             columns={columns}
             dataSource={data}
         />);

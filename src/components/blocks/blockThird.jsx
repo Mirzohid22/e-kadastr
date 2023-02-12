@@ -1,4 +1,4 @@
-import { Button, Table } from 'antd';
+import { Table } from 'antd';
 const columns = [
     {
         title: '№',
@@ -86,6 +86,7 @@ const data = [
 const BlockThird = () => {
     return (
         <Table
+            bordered
             size='middle'
             title={() => "МФЙ даги ердан фойдаланувчи субьектлар тўғрисида маълумотлар "}
             columns={columns}

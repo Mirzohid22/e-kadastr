@@ -8,17 +8,17 @@ import BlockThird from './blocks/blockThird';
 const ShowData = () => {
     const resources = [
         {
-            label: 'МФЙ ҳақида қўшимча маълумотлар',
+            label: window.screen.width > 400 ? 'МФЙ ҳақида қўшимча маълумотлар' : 'menu 1',
             key: '1',
             children: <BlockOne />
         },
         {
-            label: 'МФЙ даги ер тоифалари бўйича тақсимоти',
+            label: window.screen.width > 400 ? 'МФЙ даги ер тоифалари бўйича тақсимоти' : 'menu 2',
             key: '2',
             children: <BlockSecond />
         },
         {
-            label: 'МФЙ даги ердан фойдаланувчи субьектлар тўғрисида маълумотлар ',
+            label: window.screen.width > 400 ? 'МФЙ даги ердан фойдаланувчи субьектлар тўғрисида маълумотлар' : 'menu 3',
             key: '3',
             children: <BlockThird />
         },
@@ -28,7 +28,7 @@ const ShowData = () => {
             defaultActiveKey="1"
             type="card"
             size='medium'
-            tabBarExtraContent={<Button shape='round' size='medium' type='primary' icon={<DownloadOutlined />} >Эски версия</Button>}
+            tabBarExtraContent={<Button shape='round' size='medium' type='primary' icon={<DownloadOutlined />} >{window.screen.width > 400 ? 'Эски версия' : ''}</Button>}
             items={resources}
         />
     );
